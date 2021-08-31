@@ -1,0 +1,87 @@
+.conference-btns .leave {
+  display: none;
+}
+
+.conference-btns .camera-on {
+  display: none;
+}
+/* used to hide camera icons before joining */
+#camera-icon-container {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.video-container {
+  float: left;
+  width: 32%;
+  padding-bottom: 23%; /* = width for a 1:1 aspect ratio */
+  margin: 0.4%;
+  background-color: cornflowerblue;
+  height: 225px;
+  position: relative;
+  /* outline: 0px solid black; */
+}
+
+.active {
+  outline: 5px solid lightgreen;
+}
+
+.caption {
+  z-index: 1;
+  position: relative;
+  text-align: right;
+  color: white;
+  padding: 10px;
+}
+
+#control-container {
+  background-color: #14151d;
+  border-top: 2px solid #3e44fe;
+}
+
+.input-group {
+  top: 20%;
+}
+
+video {
+  object-fit: cover;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg); /* Safari and Chrome */
+  -moz-transform: rotateY(180deg); /* Firefox */
+}
+
+#main-wrapper {
+  padding: 0;
+  background-color: black;
+  /* height: 100vh;
+  width: 100vw; */
+}
+
+#main-view-container {
+  position: relative;
+  background-color: black;
+}
+
+#control-container {
+  /* position: relative; */
+  background-color: #212629;
+}
+
+#name-message {
+  color: white;
+}
+
+.copy-join-link {
+  color: white;
+  font-size: small;
+  text-align: center;
+}
+
+html,
+body {
+  height: 100%;
+}

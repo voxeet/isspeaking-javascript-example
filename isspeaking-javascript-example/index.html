@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Brady Bunch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://unpkg.com/@voxeet/voxeet-web-sdk" type="text/javascript"></script>
+  <script src="./scripts/video.js" type="text/javascript"></script>
+  <script src="./scripts/utils.js" type="text/javascript"></script>
+  <script src="./scripts/ui.js" type="text/javascript"></script>
+  <script src="https://kit.fontawesome.com/9a46dc54f8.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="main-wrapper" class="container-fluid h-100">
+    <div>
+      <nav class="navbar navbar-dark bg-dark py-0" style="background-color: #14151d !important;">
+        <a class="navbar-brand py-0" href="#">
+          <img src='./icons/dolbyio-logo.svg' width="100" height="30" class="d-inline-block align-top" alt="" />
+        </a>
+      </nav>
+    </div>
+    <div id="main-view-container" class="row py-3 mx-0">
+      <div class="col-2 col-md-1 col-lg-2 col-xl-2"></div>
+      <div class="col-8 col-md-10 col-lg-8 col-xl-8">
+        <div class="video-container" id="video-container-0"></div>
+        <div class="video-container" id="video-container-1"></div>
+        <div class="video-container" id="video-container-2"></div>
+        <div class="video-container" id="video-container-3"></div>
+        <div class="video-container" id="video-container-4"></div>
+        <div class="video-container" id="video-container-5"></div>
+        <div class="video-container" id="video-container-6"></div>
+        <div class="video-container" id="video-container-7"></div>
+        <div class="video-container" id="video-container-8"></div>
+      </div>
+      <div class="col-2 col-md-1 col-lg-2 col-xl-2"></div>
+    </div>
+    <div class="row fixed-bottom p-2" id="control-container">
+      <div class="col-2"></div>
+      <div class="col-3">
+        <div class="" id="name-message">
+        </div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text" id="btnGroupAddon">Enter Conference Name: </div>
+          </div>
+          <input type="text" id="alias-input" class="form-control" placeholder="" aria-label="Enter conference name"
+            aria-describedby="btnGroupAddon">
+        </div>
+      </div>
+      <div class="col-1 mt-3">
+        <div class="copy-join-link mx-auto d-block"><img src="icons/copy-link.svg" id="copy-join-link"></div>
+        <div class="copy-join-link mx-auto d-block" id="copy-join-link-msg">Copy Conference URL</div>
+      </div>
+      <div class="col-2 d-flex mt-3 justify-content-center conference-btns">
+        <div class="row">
+          <div class="join" id="join-btn">
+            <img src="icons/btn-join.svg" class="mx-auto d-block" />
+            <div style="color: white;">Join Conference</div>
+          </div>
+          <div class="leave" id="leave-btn">
+            <img src="icons/btn-leave.svg" class="mx-auto d-block" />
+            <div style="color: white;">Leave Conference</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-2 d-flex mt-3 justify-content-center conference-btns">
+        <div class="row mx-auto d-block">
+          <div id="camera-icon-container">
+            <div class="camera-off" id="stop-video-btn">
+              <img src="icons/btn-camera-off.svg" class="mx-auto d-block" id="btn-camera-off-icon" />
+            </div>
+            <div class="camera-on" id="start-video-btn">
+              <img src="icons/btn-camera-on.svg" class="mx-auto d-block" id="btn-camera-on-icon" />
+            </div>
+            <div id="camera-msg" style="color: white;">Camera Off</div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <div class="col-2"></div>
+
+  </div>
+  <script type="text/javascript" src="./scripts/client.js"></script>
+</body>
+
+</html>
