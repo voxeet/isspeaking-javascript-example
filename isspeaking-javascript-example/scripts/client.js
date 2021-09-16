@@ -31,7 +31,6 @@ VoxeetSDK.conference.on('streamRemoved', (participant, stream) => {
 const main = async () => {
   VoxeetSDK.initialize('CUSTOMER_KEY', 'CUSTOMER_SECRET');
   try {
-    // Open the session here !!!!
     await VoxeetSDK.session.open({ name: randomName });
     initUI();
   } catch (e) {
