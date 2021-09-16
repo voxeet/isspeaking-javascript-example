@@ -71,28 +71,33 @@ const initUI = () => {
     setInterval(() => {
       let participants = VoxeetSDK.conference.participants;
       for (let participant of participants) {
-        let participantToCheck = VoxeetSDK.conference.participants.get(
-          participant[0]
-        );
-        VoxeetSDK.conference.isSpeaking(participantToCheck, (status) => {
-          console.log('SPEAKING STATUS: ', status);
-          if (status) {
-            // find that participant in the user grid and set their isSpeaking to true
-            for (let i = 0; i < videoContainerList.length; i++) {
-              if (videoContainerList[i].participantId === participant[0]) {
-                let cell = document.getElementById(`video-container-${i}`);
-                cell.style.outline = '5px solid lightgreen';
+        VoxeetSDK.conference.isSpeaking(
+          VoxeetSDK.conference.participants.get(participant[0]),
+          (isSpeaking) => {
+            if (isSpeaking) {
+              console.log(
+                'The participant',
+                participant[0],
+                'speaking status:',
+                isSpeaking
+              );
+              // find that participant in the user grid and set their isSpeaking to true
+              for (let i = 0; i < videoContainerList.length; i++) {
+                if (videoContainerList[i].participantId === participant[0]) {
+                  let cell = document.getElementById(`video-container-${i}`);
+                  cell.style.outline = '5px solid lightgreen';
+                }
               }
-            }
-          } else if (!status) {
-            for (let i = 0; i < videoContainerList.length; i++) {
-              if (videoContainerList[i].participantId === participant[0]) {
-                let cell = document.getElementById(`video-container-${i}`);
-                cell.style.outline = '0px solid black';
+            } else if (!isSpeaking) {
+              for (let i = 0; i < videoContainerList.length; i++) {
+                if (videoContainerList[i].participantId === participant[0]) {
+                  let cell = document.getElementById(`video-container-${i}`);
+                  cell.style.outline = '0px solid black';
+                }
               }
             }
           }
-        });
+        );
       }
     }, 500);
   };
