@@ -1,3 +1,5 @@
+# :warning: This repository is no longer maintained :warning:
+
 # isSpeaking JavaScript Example
 
 Sample implementation for JavaScript (Web) of the isSpeaking method to poll for active user and update UI accordiingly.
